@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'predictorapp.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://heatpreduser:74PSv9j5ugkI1Xm6EML0WJDup8Obxbpq@dpg-cmc94c0cmk4c73bnudf0-a/heatpreddb',
+        default='postgres://william:zuimGc2KNiyQUGhHsWy4cuPklahzapO4@dpg-cmckum7109ks7390h7ug-a/heatpreddb_x3og',
         conn_max_age=600
     )
 }
