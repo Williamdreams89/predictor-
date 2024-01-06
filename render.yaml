@@ -1,0 +1,20 @@
+databases:
+  - name: heatpred
+    databaseName: heatpreddb
+    user: heatpreduser
+
+services:
+  - type: web
+    name: predictorapp
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn predictorapp.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: heatpred
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

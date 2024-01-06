@@ -90,15 +90,10 @@ WSGI_APPLICATION = 'predictorapp.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'heatpreddb',
-        'USER': 'heatpreduser',
-        'PASSWORD': '74PSv9j5ugkI1Xm6EML0WJDup8Obxbpq',
-        'HOST': 'dpg-cmc94c0cmk4c73bnudf0-a',  # Replace with the actual host if not running locally
-        'PORT': '5432',       # Replace with the actual port if different
-        
-    }
+    'default': dj_database_url.config(
+        default='postgres://heatpreduser:74PSv9j5ugkI1Xm6EML0WJDup8Obxbpq@dpg-cmc94c0cmk4c73bnudf0-a/heatpreddb',
+        conn_max_age=600
+    )
 }
 
 
